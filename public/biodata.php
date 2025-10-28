@@ -2,8 +2,8 @@
 require_once __DIR__ . '/../init.php';
 check_auth();
 
-// Ambil semua data pelanggan dari database
-$stmt = $pdo->query("SELECT * FROM pelanggan ORDER BY id DESC");
+
+$stmt = $pdo->query("SELECT * FROM pelanggan ORDER BY waktu_masuk DESC");
 $pelanggan = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $title = 'Data Pelanggan - Warnet Galaxy';
@@ -15,10 +15,10 @@ require_once 'templates/sidebar.php';
 
 <main class="main-content">
     <div class="card card-galaxy">
-         <div class="card-header">
-             <h3>Manajemen Data Pelanggan</h3>
-         </div>
-         <div class="card-body p-4">
+        <div class="card-header">
+            <h3 style="color: #fff;">Manajemen Data Pelanggan</h3>
+        </div>
+        <div class="card-body p-4">
             <form id="biodataForm" class="mb-4 row g-3 align-items-end">
                 <div class="col-sm-6 col-md-3">
                     <label for="nama" class="form-label">Nama Pelanggan</label>
@@ -51,7 +51,7 @@ require_once 'templates/sidebar.php';
                         <?php foreach ($pelanggan as $p): ?>
                             <tr data-id="<?= $p['id'] ?>">
                                 <td><?= htmlspecialchars($p['nama']) ?></td>
-                                <td><?= htmlspecialchars(date('H:i', strtotime($p['waktu_masuk']))) ?></td>
+                                <td><?= htmlspecialchars($p['waktu_masuk']) ?></td>
                                 <td><?= htmlspecialchars($p['keterangan'] ?: '-') ?></td>
                                 <td><button class="btn btn-sm btn-danger btn-delete">Hapus</button></td>
                             </tr>

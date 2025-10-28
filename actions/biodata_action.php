@@ -1,13 +1,13 @@
 <?php
 require_once __DIR__ . '/../init.php';
 
-// Memastikan hanya user yang terautentikasi yang bisa akses
+
 check_auth();
 
 header('Content-Type: application/json');
 $response = ['status' => 'error', 'message' => 'Terjadi kesalahan'];
 
-// Dapatkan data dari request body (karena kita akan pakai fetch API)
+
 $input = json_decode(file_get_contents('php://input'), true);
 $action = $input['action'] ?? '';
 

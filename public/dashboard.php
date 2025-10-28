@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../init.php';
-check_auth(); // Cek apakah sudah login
+check_auth();
 
 $title = 'Dashboard - Warnet Galaxy';
 $css_file = 'dashboard.css';
