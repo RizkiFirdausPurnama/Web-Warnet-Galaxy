@@ -33,3 +33,54 @@
 * **PDO (PHP Data Objects)** (untuk koneksi database yang aman)
 * **Apache** (dijalankan melalui XAMPP)
 
+## ⚙️ Panduan Instalasi dan Penyiapan Lokal
+
+Untuk menjalankan proyek ini di komputer Anda, ikuti langkah-langkah berikut:
+
+### 1. Prasyarat
+* Pastikan Anda telah menginstal **XAMPP** (atau server lokal sejenis seperti WAMP/MAMP).
+* Nyalakan modul **Apache** dan **MySQL** dari XAMPP Control Panel.
+
+### 2. Penyiapan File
+1.  **Unduh** atau **Clone** repositori ini.
+2.  Letakkan seluruh folder proyek `warnetgalaxy` ke dalam direktori `htdocs` XAMPP Anda. (Biasanya di `C:\xampp\htdocs\`).
+
+### 3. Penyiapan Database
+1.  Buka browser dan akses **phpMyAdmin** (biasanya `http://localhost/phpmyadmin/`).
+2.  Buat database baru dengan nama `warnet_galaxy`.
+3.  Klik pada database `warnet_galaxy`, lalu buka tab **SQL**.
+4.  Jalankan query SQL berikut untuk membuat tabel `admins`:
+
+    ```sql
+    CREATE TABLE admins (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      email VARCHAR(255) NOT NULL UNIQUE,
+      password VARCHAR(255) NOT NULL
+    );
+    ```
+
+5.  Jalankan query SQL berikut untuk membuat tabel `pelanggan`:
+
+    ```sql
+    CREATE TABLE pelanggan (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      nama VARCHAR(100) NOT NULL,
+      waktu_masuk TIME NOT NULL,
+      keterangan VARCHAR(255)
+    );
+    ```
+
+6.  Jalankan query SQL berikut untuk memasukkan data admin default. (Password untuk akun ini adalah `admin123`):
+
+    ```sql
+    INSERT INTO admins (email, password) VALUES ('admin@gmail.com', '$2y$10$9.B2.l2oPA/jV3/MXx8GJO2DBxKLwQfk2j5B2.V3n7k5C6z3z4f4W');
+    ```
+
+### 4. Menjalankan Aplikasi
+1.  Buka browser Anda.
+2.  Akses URL berikut: **`http://localhost/warnetgalaxy/public/login.php`**
+3.  Login menggunakan kredensial:
+    * **Email:** `admin@gmail.com`
+    * **Password:** `admin123`
+
+Proyek sekarang seharusnya sudah berjalan dengan baik.
