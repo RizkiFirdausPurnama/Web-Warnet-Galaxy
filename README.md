@@ -2,8 +2,8 @@
 
 `Warnet Galaxy` adalah aplikasi web dinamis yang berfungsi sebagai panel admin untuk mengelola data pelanggan di sebuah warung internet (warnet). Aplikasi ini dibangun dengan arsitektur **PHP** di sisi server dan **JavaScript** modern di sisi klien, dengan menggunakan **MySQL** sebagai database.
 
-![Tampilan Halaman Login](https://i.imgur.com/gKqCgWJ.png)
-![Tampilan Manajemen Data Pelanggan](https://i.imgur.com/B9zFqXW.png)
+<img src="Foto\WarnetGalaxy.png" alt="Tampilan Halaman Utama Nyusur" width="100%">
+
 
 ## 🚀 Fitur Utama
 
